@@ -1,21 +1,34 @@
 def div(func):
     # You have to code here!
-    pass
+    def wrapper_div(*args, **kwargs):
+        html_list = ['<div>', func(*args, **kwargs), '</div>']
+        html_code = ''.join(html_list)
+        return html_code
+    return wrapper_div
+        
 
 
 def article(func):
     # You have to code here!
-    pass
-
+    def wrapper_article(*args, **kwargs):
+        html_list = ['<article>', func(*args, **kwargs), '</article>']
+        html_code = ''.join(html_list)
+        return html_code
+    return wrapper_article
 
 def p(func):
     # You have to code here!
-    pass
+    def wrapper_p(*args, **kwargs):
+        html_list = ['<p>', func(*args, **kwargs), '</p>']
+        html_code = ''.join(html_list)
+        return html_code
+    return wrapper_p
+
 
 
 # Here you must apply the decorators, uncomment this later
 # @div
-# @article
+@article
 # @p
 def saludo(nombre):
     return f'¡Hola {nombre}, ¿Cómo estás?'
